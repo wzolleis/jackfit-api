@@ -1,15 +1,13 @@
-package de.wz.jackfit
+import de.wz.jackfit.plugins.configureMonitoring
+import de.wz.jackfit.plugins.configureRouting
+import de.wz.jackfit.plugins.configureSerialization
+import io.ktor.server.application.*
 
-import io.ktor.server.engine.*
-import io.ktor.server.netty.*
-import de.wz.jackfit.plugins.*
+fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
 
-fun main() {
-    embeddedServer(Netty, port = 8080, host = "0.0.0.0") {
-        configureSecurity()
-        configureHTTP()
-        configureMonitoring()
-        configureSerialization()
-        configureRouting()
-    }.start(wait = true)
+
+fun Application.module() {
+    configureRouting()
+    configureSerialization()
+    configureMonitoring()
 }

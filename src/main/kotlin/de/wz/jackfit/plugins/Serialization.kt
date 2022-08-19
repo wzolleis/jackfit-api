@@ -1,10 +1,9 @@
 package de.wz.jackfit.plugins
 
 import io.ktor.serialization.kotlinx.json.*
-import io.ktor.server.plugins.contentnegotiation.*
 import io.ktor.server.application.*
+import io.ktor.server.plugins.contentnegotiation.*
 import io.ktor.server.response.*
-import io.ktor.server.request.*
 import io.ktor.server.routing.*
 
 fun Application.configureSerialization() {
@@ -13,7 +12,7 @@ fun Application.configureSerialization() {
     }
 
     routing {
-        get("/json/kotlinx-serialization") {
+        get("/api/hellojson") {
             call.respond(mapOf("hello" to "world"))
         }
     }
