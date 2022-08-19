@@ -1,1 +1,1 @@
-web: ./build/install/projectName/bin/jackfit-api
+web: ./build/install/jackfit-api/bin/jackfit-api
