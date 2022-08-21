@@ -7,6 +7,7 @@ import io.ktor.server.response.*
 import io.ktor.server.routing.*
 
 fun Application.configureRouting() {
+    log.info("configure routing")
     install(StatusPages) {
         exception<AuthenticationException> { call, cause ->
             call.respond(HttpStatusCode.Unauthorized)
