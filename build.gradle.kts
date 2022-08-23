@@ -2,6 +2,11 @@ val ktor_version: String by project
 val kotlin_version: String by project
 val logback_version: String by project
 val kotestVersion: String by project
+val exposedVersion: String by project
+val mariaDbVersion: String by project
+val hikariVersion: String by project
+val mySqlVersion: String by project
+
 
 plugins {
     application
@@ -36,6 +41,12 @@ dependencies {
     implementation("io.ktor:ktor-serialization-kotlinx-json-jvm:$ktor_version")
     implementation("io.ktor:ktor-server-netty-jvm:$ktor_version")
     implementation("ch.qos.logback:logback-classic:$logback_version")
+    implementation("org.jetbrains.exposed:exposed-core:$exposedVersion")
+    implementation("org.jetbrains.exposed:exposed-dao:$exposedVersion")
+    implementation("org.jetbrains.exposed:exposed-jdbc:$exposedVersion")
+    implementation ("org.mariadb.jdbc:mariadb-java-client:${mariaDbVersion}")
+    implementation("com.zaxxer:HikariCP:${hikariVersion}")
+
     testImplementation("io.ktor:ktor-server-tests-jvm:$ktor_version")
     testImplementation("io.ktor:ktor-server-test-host:$ktor_version")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5:$kotlin_version")

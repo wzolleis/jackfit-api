@@ -8,7 +8,7 @@ import io.ktor.server.auth.jwt.*
 
 fun Application.configureSecurity() {
     log.info("starting to configure security mdoule")
-    environment.config.propertyOrNull("jackfit.features.security")?.let {
+    environment.config.propertyOrNull("ktor.jackfit.features.security")?.let {
         log.info("configure security module")
         authentication {
             jwt {
