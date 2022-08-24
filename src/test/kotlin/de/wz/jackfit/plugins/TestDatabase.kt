@@ -14,15 +14,11 @@ fun Application.module() {
 
 fun Application.configureDatabase() {
     val dbUrl = environment.config.property("ktor.jackfit.application.database.dbUrl")
-    val dbUser = environment.config.property("ktor.jackfit.application.database.dbUser")
-    val dbPassword = environment.config.property("ktor.jackfit.application.database.dbPassword")
-    val dbDriverClassName = environment.config.property("ktor.jackfit.application.database.dbDriverClassName")
+     val dbDriverClassName = environment.config.property("ktor.jackfit.application.database.dbDriverClassName")
 
     val config = HikariConfig().apply {
         jdbcUrl         =  dbUrl.getString()
         driverClassName = dbDriverClassName.getString()
-        username        = dbUser.getString()
-        password        = dbPassword.getString()
         maximumPoolSize = 5
     }
 

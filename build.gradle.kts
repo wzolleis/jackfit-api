@@ -6,6 +6,7 @@ val exposedVersion: String by project
 val mariaDbVersion: String by project
 val hikariVersion: String by project
 val mySqlVersion: String by project
+val h2Version: String by project
 
 
 plugins {
@@ -52,6 +53,8 @@ dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5:$kotlin_version")
     testImplementation("io.kotest:kotest-runner-junit5:$kotestVersion")
     testImplementation("io.kotest:kotest-assertions-core:$kotestVersion")
+    testImplementation("com.h2database:h2:$h2Version")
+
 }
 
 tasks.withType<Test>().configureEach {
